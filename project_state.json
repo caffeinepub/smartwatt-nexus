@@ -1,0 +1,298 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 15,
+  "summary": "Multi-page electricity consumption monitoring web application branded as 'SmartWatt Nexus', with user authentication (registration/login), backend database, ML-based consumption prediction (LSTM, regression, ANN), real-time continuous monitoring graph with updated color scheme, alert notifications for increased consumption, day-wise usage bar graph page, consumption reports page with download option, and estimated bill page using Telangana State (TS) electricity department per-unit cost rates. Arduino hardware integration planned for live data input.",
+  "architectural_notes": [
+    "Multi-page web application with separate pages for dashboard, day-wise usage, reports, and bill estimation",
+    "Backend database required for user accounts and consumption data storage",
+    "ML prediction models: LSTM, linear regression, and ANN for forecasting future consumption",
+    "TS (Telangana State) electricity department per-unit pricing used for bill estimation",
+    "Arduino hardware integration planned as the live data source for electricity consumption readings"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-user-registration-page-with-fields-for-name-email-phone-number-consumer-number-and-password-store-user-data-securely-in-the-backend-actor",
+      "title": "Create a user registration page with fields for name, email, phone number, consumer number, and password. Store user data securely in the backend actor.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-login-page-with-internet-identity-integration-after-successful-authentication-map-the-internet-identity-principal-to-the-registered-user-account-and-establish-a-session",
+      "title": "Create a login page with Internet Identity integration. After successful authentication, map the Internet Identity principal to the registered user account and establish a session.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-main-dashboard-page-that-displays-a-real-time-continuous-line-chart-of-electricity-consumption-over-time-include-a-trend-arrow-indicator-if-today-s-consumption-is-higher-than-yesterday-s-show-an-upward-red-arrow-if-lower-show-a-downward-green-arrow",
+      "title": "Build a main dashboard page that displays a real-time/continuous line chart of electricity consumption over time. Include a trend arrow indicator: if today's consumption is higher than yesterday's, show an upward red arrow; if lower, show a downward green arrow.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-alert-notifications-on-the-dashboard-when-a-user-s-current-day-consumption-exceeds-the-previous-day-s-consumption-display-a-prominent-in-app-alert-banner-notifying-the-user-of-increased-usage",
+      "title": "Implement alert notifications on the dashboard. When a user's current day consumption exceeds the previous day's consumption, display a prominent in-app alert banner notifying the user of increased usage.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-dedicated-day-wise-usage-page-that-displays-a-bar-graph-showing-electricity-consumption-for-each-day-of-the-current-month-allow-the-user-to-navigate-between-months",
+      "title": "Create a dedicated 'Day-wise Usage' page that displays a bar graph showing electricity consumption for each day of the current month. Allow the user to navigate between months.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-consumption-reports-page-that-displays-a-tabular-summary-of-monthly-consumption-data-include-a-download-button-that-exports-the-report-as-a-csv-file",
+      "title": "Create a 'Consumption Reports' page that displays a tabular summary of monthly consumption data. Include a download button that exports the report as a CSV file.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-estimated-bill-page-that-calculates-and-displays-the-estimated-electricity-bill-using-the-telangana-state-tsspdcl-tsnpdcl-electricity-department-slab-wise-per-unit-cost-rates-use-the-standard-ts-domestic-tariff-slabs-0-50-units-1-45-unit-free-for-bpl-51-100-units-2-60-unit-101-200-units-3-50-unit-201-300-units-5-00-unit-above-300-units-8-50-unit-plus-fixed-charges-and-taxes-as-applicable",
+      "title": "Create an 'Estimated Bill' page that calculates and displays the estimated electricity bill using the Telangana State (TSSPDCL/TSNPDCL) electricity department slab-wise per-unit cost rates. Use the standard TS domestic tariff slabs: 0–50 units @ ₹1.45/unit (free for BPL), 51–100 units @ ₹2.60/unit, 101–200 units @ ₹3.50/unit, 201–300 units @ ₹5.00/unit, above 300 units @ ₹8.50/unit, plus fixed charges and taxes as applicable.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-ml-based-consumption-prediction-on-the-frontend-using-pure-javascript-typescript-implement-three-prediction-models-1-simple-linear-regression-for-short-term-trend-forecasting-2-a-feedforward-artificial-neural-network-ann-approximation-using-gradient-descent-and-3-a-simplified-lstm-like-recurrent-model-for-sequential-pattern-learning-display-predicted-consumption-for-the-next-7-days-as-a-forecast-line-on-the-main-dashboard-chart",
+      "title": "Implement ML-based consumption prediction on the frontend using pure JavaScript/TypeScript. Implement three prediction models: (1) Simple Linear Regression for short-term trend forecasting, (2) a feedforward Artificial Neural Network (ANN) approximation using gradient descent, and (3) a simplified LSTM-like recurrent model for sequential pattern learning. Display predicted consumption for the next 7 days as a forecast line on the main dashboard chart.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-multi-page-navigation-layout-with-a-persistent-sidebar-or-top-navigation-bar-pages-dashboard-live-graph-day-wise-usage-reports-estimated-bill-and-profile-include-a-logout-button-that-clears-the-session",
+      "title": "Implement a multi-page navigation layout with a persistent sidebar or top navigation bar. Pages: Dashboard (live graph), Day-wise Usage, Reports, Estimated Bill, and Profile. Include a logout button that clears the session.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-consistent-dark-industrial-energy-themed-visual-design-across-the-application-use-a-dark-charcoal-background-with-electric-amber-orange-accent-colors-clean-sans-serif-typography-glowing-chart-elements-and-card-based-layout-sections-ensure-the-design-is-responsive-for-desktop-and-tablet-viewports",
+      "title": "Apply a consistent dark industrial/energy-themed visual design across the application. Use a dark charcoal background with electric amber/orange accent colors, clean sans-serif typography, glowing chart elements, and card-based layout sections. Ensure the design is responsive for desktop and tablet viewports.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-manual-consumption-entry-form-on-the-dashboard-allowing-users-to-input-daily-kwh-readings-include-a-demo-data-seeding-button-that-populates-30-days-of-sample-consumption-data-for-new-users-to-explore-the-application-immediately",
+      "title": "Add a manual consumption entry form on the dashboard allowing users to input daily kWh readings. Include a demo data seeding button that populates 30 days of sample consumption data for new users to explore the application immediately.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rename-the-application-to-smart-watt-nexus-everywhere-it-appears-in-the-frontend-the-browser-tab-title-index-html-sidebar-navigation-header-login-page-registration-page-dashboard-page-header-and-any-other-page-that-displays-the-app-name-replace-all-occurrences-of-the-old-name-e-g-smartwatt-nexus-ts-electricity-consumption-monitor-or-any-variant-with-smart-watt-nexus",
+      "title": "Rename the application to 'Smart Watt Nexus' everywhere it appears in the frontend: the browser tab title (index.html), sidebar/navigation header, login page, registration page, dashboard page header, and any other page that displays the app name. Replace all occurrences of the old name (e.g., 'SmartWatt Nexus', 'TS Electricity Consumption Monitor', or any variant) with 'Smart Watt Nexus'.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-amber-orange-dark-industrial-color-scheme-with-a-new-cohesive-color-palette-across-the-entire-application-adopt-a-deep-navy-midnight-blue-background-replacing-the-dark-charcoal-with-electric-cyan-teal-as-the-primary-accent-color-replacing-amber-orange-update-all-css-custom-properties-in-frontend-src-index-css-and-frontend-index-css-the-tailwind-config-custom-color-tokens-in-frontend-tailwind-config-js-and-any-hardcoded-color-classes-in-components-layout-consumptionchart-dashboardpage-daywiseusagepage-estimatedbillpage-reportspage-loginpage-registerpage-profilepage-and-all-shared-components-ensure-chart-glow-effects-sidebar-card-backgrounds-buttons-badges-alert-banners-and-trend-indicators-all-reflect-the-new-palette-consistently-the-application-should-feel-visually-refreshed-while-maintaining-the-same-dark-energy-monitor-aesthetic",
+      "title": "Replace the current amber/orange dark industrial color scheme with a new cohesive color palette across the entire application. Adopt a deep navy/midnight blue background (replacing the dark charcoal), with electric cyan/teal as the primary accent color (replacing amber/orange). Update all CSS custom properties in frontend/src/index.css and frontend/index.css, the Tailwind config custom color tokens in frontend/tailwind.config.js, and any hardcoded color classes in components (Layout, ConsumptionChart, DashboardPage, DayWiseUsagePage, EstimatedBillPage, ReportsPage, LoginPage, RegisterPage, ProfilePage, and all shared components). Ensure chart glow effects, sidebar, card backgrounds, buttons, badges, alert banners, and trend indicators all reflect the new palette consistently. The application should feel visually refreshed while maintaining the same dark, energy-monitor aesthetic.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-save-the-uploaded-image-img-20260127-wa0007-jpg-as-the-app-logo-at-frontend-public-assets-generated-logo-png-and-render-it-in-the-sidebar-navigation-header-replacing-any-text-only-or-placeholder-logo-the-login-page-header-and-the-registration-page-header-the-logo-should-be-sized-appropriately-for-each-context-e-g-40px-height-in-the-sidebar-80px-height-on-auth-pages-and-maintain-its-aspect-ratio",
+      "title": "Save the uploaded image (IMG-20260127-WA0007.jpg) as the app logo at frontend/public/assets/generated/logo.png and render it in the sidebar navigation header (replacing any text-only or placeholder logo), the login page header, and the registration page header. The logo should be sized appropriately for each context (e.g., ~40px height in the sidebar, ~80px height on auth pages) and maintain its aspect ratio.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-new-about-page-at-a-dedicated-route-e-g-about-that-describes-the-smart-watt-nexus-application-the-page-should-include-app-name-and-logo-a-brief-description-of-the-app-s-purpose-smart-electricity-consumption-monitoring-key-features-listed-dashboard-ml-predictions-day-wise-usage-reports-estimated-bill-technology-highlights-internet-identity-authentication-telangana-tsspdcl-tariff-rates-ml-models-linear-regression-ann-lstm-like-and-a-note-about-planned-arduino-hardware-integration-style-the-page-consistently-with-the-existing-deep-navy-electric-cyan-design-theme-using-card-based-layout-sections",
+      "title": "Create a new 'About' page at a dedicated route (e.g., /about) that describes the Smart Watt Nexus application. The page should include: app name and logo, a brief description of the app's purpose (smart electricity consumption monitoring), key features listed (dashboard, ML predictions, day-wise usage, reports, estimated bill), technology highlights (Internet Identity authentication, Telangana TSSPDCL tariff rates, ML models: Linear Regression, ANN, LSTM-like), and a note about planned Arduino hardware integration. Style the page consistently with the existing deep navy/electric cyan design theme using card-based layout sections.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-about-as-a-navigation-item-in-the-persistent-sidebar-layout-tsx-so-users-can-navigate-to-the-about-page-the-sidebar-entry-should-use-an-appropriate-icon-e-g-info-or-helpcircle-and-be-labelled-about-ensure-it-highlights-correctly-when-the-about-route-is-active",
+      "title": "Add 'About' as a navigation item in the persistent sidebar (Layout.tsx) so users can navigate to the About page. The sidebar entry should use an appropriate icon (e.g., Info or HelpCircle) and be labelled 'About'. Ensure it highlights correctly when the /about route is active.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-new-user-onboarding-guide-that-is-shown-to-users-who-have-just-registered-or-have-no-consumption-data-yet-display-a-step-by-step-welcome-modal-or-a-dismissible-guided-tooltip-highlight-tour-that-walks-new-users-through-the-key-sections-of-the-app-in-this-order-1-dashboard-overview-and-manual-data-entry-2-day-wise-usage-monthly-bar-chart-3-reports-download-csv-4-estimated-bill-tariff-calculation-5-profile-account-settings-each-step-should-briefly-explain-what-the-section-does-the-guide-should-be-dismissible-at-any-point-and-should-not-re-appear-once-dismissed-persist-the-dismissed-state-style-the-onboarding-ui-consistently-with-the-existing-deep-navy-electric-cyan-dark-theme",
+      "title": "Implement a new user onboarding guide that is shown to users who have just registered or have no consumption data yet. Display a step-by-step welcome modal or a dismissible guided tooltip/highlight tour that walks new users through the key sections of the app in this order: (1) Dashboard – overview and manual data entry, (2) Day-wise Usage – monthly bar chart, (3) Reports – download CSV, (4) Estimated Bill – tariff calculation, (5) Profile – account settings. Each step should briefly explain what the section does. The guide should be dismissible at any point and should not re-appear once dismissed (persist the dismissed state). Style the onboarding UI consistently with the existing deep navy/electric cyan dark theme.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-consumptionchart-tsx-and-dashboardpage-tsx-update-the-color-used-for-ml-prediction-forecast-data-series-to-make-it-visually-distinct-and-high-contrast-against-both-the-historical-consumption-line-and-the-dark-navy-background-replace-the-current-prediction-line-color-with-a-vivid-contrasting-color-e-g-a-bright-violet-purple-like-a855f7-or-a-bright-coral-magenta-like-f43f5e-that-clearly-differentiates-forecast-values-from-actual-data-update-the-chart-legend-label-for-the-prediction-line-to-read-forecast-ml-ensure-the-custom-tooltip-in-the-chart-also-reflects-the-updated-color-for-predicted-values-apply-glow-stroke-effects-consistent-with-the-existing-chart-styling",
+      "title": "In ConsumptionChart.tsx and DashboardPage.tsx, update the color used for ML prediction/forecast data series to make it visually distinct and high-contrast against both the historical consumption line and the dark navy background. Replace the current prediction line color with a vivid contrasting color (e.g., a bright violet/purple like #a855f7 or a bright coral/magenta like #f43f5e) that clearly differentiates forecast values from actual data. Update the chart legend label for the prediction line to read 'Forecast (ML)'. Ensure the custom tooltip in the chart also reflects the updated color for predicted values. Apply glow/stroke effects consistent with the existing chart styling.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-the-footer-section-of-layout-tsx-and-any-other-component-that-renders-a-footer-update-the-copyright-text-to-read-smart-watt-nexus-and-remove-any-reference-to-mcaffine-ink-or-similar-third-party-branding-the-footer-should-only-display-the-smart-watt-nexus-brand-name-with-an-appropriate-copyright-year",
+      "title": "In the footer section of Layout.tsx (and any other component that renders a footer), update the copyright text to read '© Smart Watt Nexus' and remove any reference to 'McAffine Ink' or similar third-party branding. The footer should only display the Smart Watt Nexus brand name with an appropriate copyright year.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "User registration and login pages with authentication",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Backend database connection for storing user and consumption data",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "ML algorithms (LSTM, regression, ANN) for predicting future electricity consumption",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Real-time consumption graph with continuous display and trend arrow indicator",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Alert notification to user when consumption increases compared to previous day",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Day-wise usage page with bar graph visualization",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Consumption reports page with download option",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Estimated bill page using TS electricity department per-unit cost rates",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Implement a backend data model for electricity consumption records. Each record stores: user ID, date, units consumed (kWh), and timestamp. Provide Motoko functions to add, retrieve by user, and retrieve by date range.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Arduino hardware integration for providing live electricity consumption data to the app",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Continuous real-time graph monitoring with updated color scheme on the dashboard",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Change the color scheme/theme of the app",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Use a user-provided image as the app logo across the application",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Save the uploaded screenshot image (Screenshot_2026-02-25-14-27-29-00_92460851df6f172a4592fca41cc2d2e6.jpg) as the app logo at frontend/public/assets/generated/logo.png, replacing the existing logo file. Render this new logo image in the sidebar navigation header (~40px height), the login page header (~80px height), and the registration page header (~80px height), maintaining its aspect ratio in all contexts.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Add an 'About' page/section to the app with information about the application",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Add new user onboarding/navigation guidance to help new users navigate the app",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Change the contrast color used for prediction/forecast values on the dashboard chart to make them more visually distinct",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-20",
+      "summary": "Remove Internet Identity from login and registration; use standard username/password authentication only",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-21",
+      "summary": "Add detailed TS electricity bill page with GST, standard tariff slabs, minimum bill amount, sample bill, and PDF download option with full bill details",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-22",
+      "summary": "Update footer copyright text to 'SmartWatt Nexus' and remove 'McAffine Ink' from the footer",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "SmartWatt Nexus",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

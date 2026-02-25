@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Deep Navy / Midnight Blue palette */
+    --background: oklch(0.13 0.03 250);
+    --foreground: oklch(0.93 0.02 220);
+
+    --card: oklch(0.17 0.035 250);
+    --card-foreground: oklch(0.93 0.02 220);
+
+    --popover: oklch(0.17 0.035 250);
+    --popover-foreground: oklch(0.93 0.02 220);
+
+    /* Electric Cyan / Teal accent */
+    --primary: oklch(0.72 0.18 195);
+    --primary-foreground: oklch(0.10 0.03 250);
+
+    --secondary: oklch(0.22 0.04 250);
+    --secondary-foreground: oklch(0.85 0.03 220);
+
+    --muted: oklch(0.20 0.03 250);
+    --muted-foreground: oklch(0.60 0.04 230);
+
+    --accent: oklch(0.72 0.18 195);
+    --accent-foreground: oklch(0.10 0.03 250);
+
+    --destructive: oklch(0.55 0.22 25);
+    --destructive-foreground: oklch(0.95 0.01 25);
+
+    --border: oklch(0.25 0.04 250);
+    --input: oklch(0.22 0.04 250);
+    --ring: oklch(0.72 0.18 195);
+
+    --radius: 0.5rem;
+
+    /* Chart colors — cyan/teal family */
+    --chart-1: oklch(0.72 0.18 195);
+    --chart-2: oklch(0.62 0.16 210);
+    --chart-3: oklch(0.55 0.14 225);
+    --chart-4: oklch(0.80 0.14 175);
+    --chart-5: oklch(0.45 0.12 240);
+
+    /* App-specific tokens */
+    --energy: oklch(0.72 0.18 195);
+    --energy-glow: oklch(0.72 0.18 195 / 0.35);
+    --sidebar: oklch(0.11 0.03 250);
+    --sidebar-foreground: oklch(0.85 0.03 220);
+    --sidebar-border: oklch(0.22 0.04 250);
+    --sidebar-accent: oklch(0.72 0.18 195);
+    --sidebar-accent-foreground: oklch(0.10 0.03 250);
+    --chart-glow: oklch(0.72 0.18 195 / 0.25);
+
+    /* Vivid violet for ML forecast — high contrast on dark navy */
+    --forecast: oklch(0.68 0.28 300);
+    --forecast-glow: oklch(0.68 0.28 300 / 0.35);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .energy-glow {
+    box-shadow: 0 0 20px var(--energy-glow);
+  }
+
+  .forecast-glow {
+    box-shadow: 0 0 20px var(--forecast-glow);
+  }
+
+  .chart-glow {
+    filter: drop-shadow(0 0 8px var(--chart-glow));
+  }
+
+  .sidebar-gradient {
+    background: linear-gradient(180deg, var(--sidebar) 0%, oklch(0.13 0.04 250) 100%);
+  }
+
+  .card-gradient {
+    background: linear-gradient(135deg, var(--card) 0%, oklch(0.19 0.04 250) 100%);
+  }
+
+  .text-energy {
+    color: var(--energy);
+  }
+
+  .bg-energy {
+    background-color: var(--energy);
+  }
+
+  .border-energy {
+    border-color: var(--energy);
+  }
+
+  .text-forecast {
+    color: var(--forecast);
+  }
+
+  .bg-forecast {
+    background-color: var(--forecast);
+  }
+
+  .border-forecast {
+    border-color: var(--forecast);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px var(--energy-glow);
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "build_request",
+  "title": "Update footer copyright text to Smart Watt Nexus and remove McAffine Ink",
+  "projectName": "Smart Watt Nexus",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-21",
+      "text": "In the footer section of Layout.tsx (and any other component that renders a footer), update the copyright text to read '© Smart Watt Nexus' and remove any reference to 'McAffine Ink' or similar third-party branding. The footer should only display the Smart Watt Nexus brand name with an appropriate copyright year.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Update the footer copyright text to smartwatt nexus and remove mcaffine ink in the footer"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The footer copyright text reads '© Smart Watt Nexus' (or '© [year] Smart Watt Nexus') with no mention of 'McAffine Ink' or any other third-party name.",
+        "The footer appears consistently across all authenticated pages that use the Layout component.",
+        "No other footer content or layout is altered."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify any files listed under frontend.immutablePaths.",
+    "Do not change any other footer content, layout, or styling beyond the copyright text update."
+  ],
+  "nonGoals": [
+    "Redesigning or restyling the footer.",
+    "Adding new footer links or sections.",
+    "Changing any page content outside the footer."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
